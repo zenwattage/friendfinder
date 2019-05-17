@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/zenwattage/friendfinder/issues"
   },
-  "homepage": "https://github.com/zenwattage/friendfinder#readme"
+  "homepage": "https://github.com/zenwattage/friendfinder#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "path": "^0.12.7"
+  }
 }
