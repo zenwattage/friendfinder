@@ -1,4 +1,5 @@
-
+//routes for data
+//determine which data the user sees and is allowed to post to our server
 
 //* A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
 
