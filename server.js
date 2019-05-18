@@ -16,7 +16,9 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 //inclue route files
+require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
+
 
 //start server listnening on port 8080
 app.listen(PORT, function () {
