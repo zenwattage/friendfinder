@@ -48,7 +48,28 @@
       <a href="/api/waitlist">API Wait List</a></p>
   </div>
 
+<script type="text/javascript">
 
+    function runSurveyQuery() {
+        var currentURL = window.location.origin;
+
+        $.ajax({url: currentURL + "/data/friends", method: "GET"})
+        
+            .done(function(surveyData) {
+                console.log("==============================");
+                console.log("URL: " + currentURL + "/data/friends");
+                console.log(surveyData);
+                console.log("==============================");
+
+                for(var i = 0; i < surveyData.length; i++) {
+                    console.log(surveyData[i]);
+                }
+            
+            })
+    }
+    runSurveyQuery();
+
+</script>
 
 
 
