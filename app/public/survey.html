@@ -7,12 +7,10 @@
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script
-			  src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-  
+
 
 </head>
 
@@ -27,146 +25,148 @@
 
     </div>
   </div>
-  
-  
+
+  <div class="container" id="input-form">
+    <input type="name" id="name" placeholder="Enter your name here: ">
+    <input type="url" id="photo" placeholder="Your Photo URL here: ">
+  </div>
+
+
 
   <div class="container">
     <div class="card">
       <h1> Questions: </h1>
       <h2>Answers are 1-5 scale. 1 = not agree, 5 = completely agree</h2>
-      
+
     </div>
   </div>
-  
+
   <br>
 
-<div class="container">
+  <div class="container">
 
-<label><h3>The sound of one hand clapping?</h3></label>
-<select class="form-control" id="q1">
-  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
-<br>
-<label><h3>Forest or trees?</h3></label>
-<select class="form-control" id="q2">
-  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
-<br>
-<label><h3>Formless, shapeless, like water?</h3></label>
-<select class="form-control" id="q3">
-  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
-<br>
-<label><h3>We are in a simulation?</h3></label>
-<select class="form-control" id="q4">
-  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
-<br>
-<label><h3>Scared of the time before you were born?</h3></label>
-<select class="form-control" id="q5">
-  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
-<br>
-<label><h3>Scared of time after your death?</h3></label>
-<select class="form-control" id="q6">
-  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
-<br>
-<label><h3>Do you believe in magic?</h3></label>
-<select class="form-control" id="q7">
-  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
-<br>
-<label><h3>Experienced magic in real life?</h3></label>
-<select class="form-control" id="q8">
-  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
-<br>
-<label><h3>Aliens?</h3></label>
-<select class="form-control" id="q9">
-  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
-<br>
-<label><h3>God?</h3></label>
-<select class="form-control" id="q10">
-  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+    <label>
+      <h3>The sound of one hand clapping?</h3>
+    </label>
+    <select class="form-control" id="q1">
+      <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <br>
+    <label>
+      <h3>Forest or trees?</h3>
+    </label>
+    <select class="form-control" id="q2">
+      <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <br>
+    <label>
+      <h3>Formless, shapeless, like water?</h3>
+    </label>
+    <select class="form-control" id="q3">
+      <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <br>
+    <label>
+      <h3>We are in a simulation?</h3>
+    </label>
+    <select class="form-control" id="q4">
+      <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <br>
+    <label>
+      <h3>Scared of the time before you were born?</h3>
+    </label>
+    <select class="form-control" id="q5">
+      <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <br>
+    <label>
+      <h3>Scared of time after your death?</h3>
+    </label>
+    <select class="form-control" id="q6">
+      <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <br>
+    <label>
+      <h3>Do you believe in magic?</h3>
+    </label>
+    <select class="form-control" id="q7">
+      <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <br>
+    <label>
+      <h3>Experienced magic in real life?</h3>
+    </label>
+    <select class="form-control" id="q8">
+      <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <br>
+    <label>
+      <h3>Aliens?</h3>
+    </label>
+    <select class="form-control" id="q9">
+      <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <br>
+    <label>
+      <h3>God?</h3>
+    </label>
+    <select class="form-control" id="q10">
+      <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
 
 
-
+    
 <!-- Button trigger modal -->
 <br>
 <button type="submit" class="btn btn-primary btn-lg" id="submitButton" data-toggle="modal" data-target="#exampleModal">Submit your answers!</button>
@@ -177,52 +177,84 @@
 
 
 
-  <div class="container">
-    <p><a href="/api/table">API Table Link</a> |
-      <a href="https://github.com/zenwattage/friendfinder">GitHub Link</a></p>
-  </div>
+    <!-- Modal -->
+    <div id="buddyModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="buddyModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="buddyModalLabel">Your buddy is: </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <h1 id="your-buddy"></h1>
+            <img id="buddy-photo" src="#">
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
 
 
 
-<script type="text/javascript">
+    <div class="container">
+      <p><a href="/api/table">API Table Link</a> |
+        <a href="https://github.com/zenwattage/friendfinder">GitHub Link</a></p>
+    </div>
 
-  $("#submitButton").on("click", function(event) {
 
-    event.preventDefault();
 
-    var good = true;
-    //input validation
-    if($("#name").val() === "" || $("#photo").val() === "" || $("#scores").val() === null) {
-      good = false;
-    } 
+    <script type="text/javascript">
 
-    if(good === true) {
-      var newBuddy = {
-        name: $("#name").val().trim(),
-        photo: $("#photo").val().trim(),
-        scores: [
-          $("#q1").val(),
-          $("#q1").val(),
-          $("#q1").val(),
-          $("#q1").val(),
-          $("#q1").val(),
-          $("#q1").val(),
-          $("#q1").val(),
-          $("#q1").val(),
-          $("#q1").val(),
-          $("#q1").val(),
-        ]
-      };
+      $("#submitButton").on("click", function (event) {
 
-      $.POST("/data/friends", newBuddy, function() {
-        $("#your-buddy").text(data.name);
-        $("#buddy-photo").attr("src", data.photo);
+        event.preventDefault();
+
+        var good = true;
+        //input validation
+        if ($("#name").val() === "" || $("#photo").val() === "" || $("#scores").val() === null) {
+          good = false;
+        }
+
+        else if (good === true) {
+          var newBuddy = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [
+              $("#q1").val(),
+              $("#q1").val(),
+              $("#q1").val(),
+              $("#q1").val(),
+              $("#q1").val(),
+              $("#q1").val(),
+              $("#q1").val(),
+              $("#q1").val(),
+              $("#q1").val(),
+              $("#q1").val(),
+            ]
+          };
+
+          var currentURL = window.location.origin;
+          $.POST(currentURL + "/api/friends", newBuddy, function () {
+            $("#your-buddy").text(data.name);
+            $("#buddy-photo").attr("src", data.photo);
+            $("#buddyModal").modal("toggle");
+          });
+
+        }  else {
+          alert("All fields required.");
+        }
+
       });
-
-    }
-
-  });
-</script>
+    </script>
 
 
 
