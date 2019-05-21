@@ -1,5 +1,5 @@
 //ARRAY OF OBJECTS
-var friendsArray = [
+var friends = [
     {
     "name":"Smedley Butler",
     "photo":"https://www.veteranstoday.com/wp-content/uploads/2018/12/x9bttocdfrx11.jpg",
@@ -69,4 +69,4 @@ var friendsArray = [
 ];
 
 
-module.exports = friendsArray;
+module.exports = friends;

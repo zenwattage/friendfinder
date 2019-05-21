@@ -220,7 +220,7 @@
 
         var good = true;
         //input validation
-        if ($("#name").val() === "" || $("#photo").val() === "" || $("#scores").val() === null) {
+        if ($("#name").val() === "" || $("#photo").val() === "" || $("#scores").val() === "") {
           good = false;
         }
 
@@ -243,7 +243,7 @@
           };
 
           var currentURL = window.location.origin;
-          $.POST(currentURL + "/api/friends", newBuddy, function () {
+          $.post(currentURL + "/api/friends", newBuddy, function (data) {
             $("#your-buddy").text(data.name);
             $("#buddy-photo").attr("src", data.photo);
             $("#buddyModal").modal("toggle");
