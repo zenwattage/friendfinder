@@ -1,8 +1,8 @@
 //ARRAY OF OBJECTS
 var friendsArray = [
     {
-    "name":"Ahmed",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "name":"Smedley Butler",
+    "photo":"https://www.veteranstoday.com/wp-content/uploads/2018/12/x9bttocdfrx11.jpg",
     "scores":[
         5,
         1,
@@ -17,11 +17,11 @@ var friendsArray = [
       ]
   },
   {
-      "name":"Santa",
-      "photo":"https://img.newatlas.com/santa-1.jpg?auto=format%2Ccompress&ch=Width%2CDPR&fit=crop&h=347&q=60&rect=0%2C85%2C1622%2C913&w=616&s=062620b7d3a0b5ac66981feb0fd10c84",
+      "name":"Muhammad Ali",
+      "photo":"https://pmcvariety.files.wordpress.com/2016/06/muhammad-ali-3.jpg?w=1000&h=562&crop=1",
       "scores":[
           4,
-          5,
+          4,
           5,
           4,
           2,
@@ -31,7 +31,41 @@ var friendsArray = [
           2,
           3
       ]
+  },
+  {
+      "name":"Alan Watts",
+      "photo":"https://i0.wp.com/www.brainpickings.org/wp-content/uploads/2014/01/alanwatts.jpg?w=680&ssl=1",
+      "scores":[
+          2,
+          5,
+          3,
+          2,
+          5,
+          3,
+          3,
+          1,
+          5,
+          4
+      ]
+  },
+  {
+      "name":"Miyamoto Musashi",
+      "photo":"https://ih1.redbubble.net/image.496996823.0829/ap,550x550,12x16,1,transparent,t.u1.png",
+      "scores":[
+          3,
+          1,
+          4,
+          3,
+          3,
+          2,
+          4,
+          5,
+          5,
+          1
+      ]
   }
+
+
 ];
 
 

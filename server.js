@@ -15,6 +15,10 @@ var PORT = process.env.PORT || 8080;
 
 //app.use(express.json());
 
+// i dont know why we're using bodyparser instead of express
+//the example showed us bodyparser but express seemed to be 
+//already doing what bodyparser was being used for?
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
