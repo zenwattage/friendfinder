@@ -29,19 +29,121 @@
 
   <div class="container">
     <div class="card">
-      <h1>Survey Questions: </h1>
+      <h1> Questions: </h1>
       <h2>Answers are 1-5 scale. 1 = not agree, 5 = completely agree</h2>
       
     </div>
   </div>
+  
+  <br>
+
 <div class="container">
 
 <label><h3>The sound of one hand clapping?</h3></label>
 <select class="form-control" id="q1">
+  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
   <option value="1">1</option>
   <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<br>
+<label><h3>Forest or trees?</h3></label>
+<select class="form-control" id="q2">
+  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<br>
+<label><h3>Formless, shapeless, like water?</h3></label>
+<select class="form-control" id="q3">
+  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<br>
+<label><h3>We are in a simulation?</h3></label>
+<select class="form-control" id="q4">
+  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<br>
+<label><h3>Scared of the time before you were born?</h3></label>
+<select class="form-control" id="q5">
+  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<br>
+<label><h3>Scared of time after your death?</h3></label>
+<select class="form-control" id="q6">
+  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<br>
+<label><h3>Do you believe in magic?</h3></label>
+<select class="form-control" id="q7">
+  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<br>
+<label><h3>Experienced magic in real life?</h3></label>
+<select class="form-control" id="q8">
+  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<br>
+<label><h3>Aliens?</h3></label>
+<select class="form-control" id="q9">
+  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+<br>
+<label><h3>God?</h3></label>
+<select class="form-control" id="q10">
+  <option selected>Choose between: 1(Don't agree) and 5(Completely Agree)</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
 </select>
 
+
+
+<br>
+<button type="submit" class="btn btn-primary btn-lg" id="submitButton">Submit your answers!</button>
+<br>
 
 </div>
 
@@ -53,27 +155,46 @@
       <a href="https://github.com/zenwattage/friendfinder">GitHub Link</a></p>
   </div>
 
+
+
 <script type="text/javascript">
 
-    function runSurveyQuery() {
-        var currentURL = window.location.origin;
+  $("#submitButton").on("click", function(event) {
 
-        $.ajax({url: currentURL + "/data/friends", method: "GET"})
-        
-            .done(function(surveyData) {
-                console.log("==============================");
-                console.log("URL: " + currentURL + "/data/friends");
-                console.log(surveyData);
-                console.log("==============================");
+    event.preventDefault();
 
-                for(var i = 0; i < surveyData.length; i++) {
-                    console.log(surveyData[i]);
-                }
-            
-            })
+    var good = true;
+    //input validation
+    if($("#name").val() === "" || $("#photo").val() === "" || $("#scores").val() === null) {
+      good = false;
     }
-    runSurveyQuery();
 
+    if(good === true) {
+      var newBuddy = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: [
+          $("#q1").val(),
+          $("#q1").val(),
+          $("#q1").val(),
+          $("#q1").val(),
+          $("#q1").val(),
+          $("#q1").val(),
+          $("#q1").val(),
+          $("#q1").val(),
+          $("#q1").val(),
+          $("#q1").val(),
+        ]
+      };
+
+      $.POST("/data/friends", newBuddy, function() {
+        $("#your-buddy").text(data.name);
+        $("#buddy-photo").attr("src", data.photo);
+      });
+
+    }
+
+  });
 </script>
 
 
