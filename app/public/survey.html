@@ -247,6 +247,7 @@
 
           var currentURL = window.location.origin;
           $.post(currentURL + "/api/friends", newBuddy, function (data) {
+            
             $("#your-buddy").text(data.name);
             $("#buddy-photo").attr("src", data.photo);
             $("#buddyModal").modal("toggle");
