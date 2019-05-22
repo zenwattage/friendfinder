@@ -35,14 +35,21 @@ module.exports = function (app) {
             }
             if (comp < comparison) {
                 comparison = comp;
+                matchedBuddy = friends[i].name;
+                buddyImage = friends[i].photo;
             }
         }
 
         friends.push(nextUser);
 
-        console.log(matchedBuddy);
+        //console.log(matchedBuddy);
 
-        res.json(matchedBuddy);
+        res.json(
+            {
+                status: 'OK',
+                matchedBuddy: matchedBuddy,
+                buddyImage: buddyImage
+            });
     })
 }
 
