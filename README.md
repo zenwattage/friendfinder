@@ -14,8 +14,9 @@ Using Express to handle the routing.
 
 
 
+
 ## Demo
-[Click here to see a full demo of friendfinder](https://www.youtube.com/watch?v=WZeTd8xHKsg)
+[Click here to try a full demo of friendfinder deployed on Heroku](https://salty-wildwood-34652.herokuapp.com/)
 
 
 
