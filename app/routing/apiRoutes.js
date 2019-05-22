@@ -15,11 +15,11 @@ module.exports = function(app) {
 
     app.post("/api/friends", function(req, res) {
 
-        var nextUser = req.body;
+        var newUser = req.body;
 
         //iterate over scores and convert each to integer
-        for(var i = 0; i < nextUser.scores.length; i++) {
-            nextUser.scores[i] = parseInt(nextUser.scores[i]);
+        for(var i = 0; i < newUser.scores.length; i++) {
+            newUser.scores[i] = parseInt(newUser.scores[i]);
         }
 
         var matchedBuddy;
@@ -34,8 +34,9 @@ module.exports = function(app) {
             console.log(currentBuddy);
             for(var j = 0; j < currentBuddy.length; j++){
                 
-            diffArray.push(Math.abs(currentBuddy[j] - nextUser.scores[j]));
-            var currentTotal = diffArray.reduce((a, b) => a + b)
+            diffArray.push(Math.abs(currentBuddy[j] - newUser.scores[j]));
+                //(total,amount)
+            var currentTotal = diffArray.reduce((total, amount) => total + amount);
 
             }
 
@@ -48,7 +49,7 @@ module.exports = function(app) {
             }
         }
 
-        friends.push(nextUser);
+        friends.push(newUser);
 
         console.log(matchedBuddy);
 
