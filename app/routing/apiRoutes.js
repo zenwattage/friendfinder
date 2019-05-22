@@ -28,14 +28,14 @@ module.exports = function(app) {
         
         var diffArray = [];
 
-        for(var i = 0; i < friends.length; i++) {
+        for(var k = 0; k < friends.length; k++) {
 
-            var currentBuddy = friends[i].scores;
+            var currentBuddy = friends[k].scores;
             console.log(currentBuddy);
             for(var j = 0; j < currentBuddy.length; j++){
                 
             diffArray.push(Math.abs(currentBuddy[j] - newUser.scores[j]));
-                //(total,amount)
+            
             var currentTotal = diffArray.reduce((total, amount) => total + amount);
 
             }
@@ -45,7 +45,7 @@ module.exports = function(app) {
             if (currentTotal < topScore) {
 
                 currentTotal = topScore;
-                matchedBuddy = friends[i];
+                matchedBuddy = friends[k];
             }
         }
 
