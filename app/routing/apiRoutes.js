@@ -6,36 +6,35 @@ var path = require('path');
 
 
 //* A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
-module.exports = function(app) {
-    app.get('/data/friends', function(req, res) {
+module.exports = function (app) {
+    app.get('/data/friends', function (req, res) {
         return res.json(friends);
-        
+
     });
 
 
-    app.post("/api/friends", function(req, res) {
+    app.post("/api/friends", function (req, res) {
         console.log(req.body.scores);
 
         var nextUser = req.body;
 
         var userScores = nextUser.scores;
 
-
         var matchedBuddy = "";
+
         var buddyImage = "";
-        var diffArray = [];
-        for(var i = 0; i < friends.length; i++) {
-            var currentBuddy = friends[i].scores;
-            console.log(currentBuddy);
-            for(var j = 0; j < currentBuddy.length; j++){
-                
-            diffArray.push(Math.abs(currentBuddy[j] - nextUser.scores[j]));
-            var currentTotal = diffArray.reduce((a,b) => a + b)
+
+        var comparison = 9999999999;
+
+        for (var i = 0; i < friends.length; i++) {
+            var comp = 0;
+            //console.log(userScores);
+            for (var j = 0; j < userScores.length; j++) {
+                comp += Math.abs(friends[i].scores[i] - userScores[j])
 
             }
-            if (currentTotal < topScore) {
-                currentTotal = topScore;
-                matchedBuddy = friends[i];
+            if (comp < comparison) {
+                comparison = comp;
             }
         }
 
