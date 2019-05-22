@@ -1,56 +1,59 @@
 //routes for data
 var friends = require('../data/friends.js');
-//path routes
-var path = require('path');
 //determine which data the user sees and is allowed to post to our server
 
 
 //* A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
-module.exports = function (app) {
-    app.get('/data/friends', function (req, res) {
-        return res.json(friends);
+module.exports = function(app) {
 
+    app.get('/api/friends', function(req, res) {
+
+        return res.json(friends);
+        
     });
 
 
-    app.post("/api/friends", function (req, res) {
-        console.log(req.body.scores);
+    app.post("/api/friends", function(req, res) {
 
         var nextUser = req.body;
 
-        var userScores = nextUser.scores;
+        //iterate over scores and convert each to integer
+        for(var i = 0; i < nextUser.scores.length; i++) {
+            nextUser.scores[i] = parseInt(nextUser.scores[i]);
+        }
 
-        var matchedBuddy = "";
+        var matchedBuddy;
+        
+        var topScore = 999999;
+        
+        var diffArray = [];
 
-        var buddyImage = "";
+        for(var i = 0; i < friends.length; i++) {
 
-        var comparison = 9999999999;
-
-        for (var i = 0; i < friends.length; i++) {
-            var comp = 0;
-            //console.log(userScores);
-            for (var j = 0; j < userScores.length; j++) {
-                comp += Math.abs(friends[i].scores[i] - userScores[j])
+            var currentBuddy = friends[i].scores;
+            console.log(currentBuddy);
+            for(var j = 0; j < currentBuddy.length; j++){
+                
+            diffArray.push(Math.abs(currentBuddy[j] - nextUser.scores[j]));
+            var currentTotal = diffArray.reduce((a, b) => a + b)
 
             }
-            if (comp < comparison) {
-                comparison = comp;
-                matchedBuddy = friends[i].name;
-                buddyImage = friends[i].photo;
+
+            diffArray = [];
+
+            if (currentTotal < topScore) {
+
+                currentTotal = topScore;
+                matchedBuddy = friends[i];
             }
         }
 
         friends.push(nextUser);
 
-        //console.log(matchedBuddy);
+        console.log(matchedBuddy);
 
-        res.json(
-            {
-                status: 'OK',
-                matchedBuddy: matchedBuddy,
-                buddyImage: buddyImage
-            });
-    })
-}
+        res.json(matchedBuddy);
+    });
+};
 
 //* A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.

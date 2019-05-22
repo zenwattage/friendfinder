@@ -53,14 +53,14 @@ var friends = [
       "photo":"https://ih1.redbubble.net/image.496996823.0829/ap,550x550,12x16,1,transparent,t.u1.png",
       "scores":[
           3,
-          1,
+          5,
           4,
           3,
-          3,
+          4,
           2,
           4,
-          5,
-          5,
+          3,
+          2,
           1
       ]
   }
