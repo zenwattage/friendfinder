@@ -1,5 +1,7 @@
 //routes for data
 var friends = require('../data/friends.js');
+//path routes
+var path = require('path');
 //determine which data the user sees and is allowed to post to our server
 
 
@@ -16,12 +18,11 @@ module.exports = function(app) {
 
         var nextUser = req.body;
 
-        for(var i = 0; i < nextUser.scores.length; i++) {
-            nextUser.scores[i] = parseInt(nextUser.scores[i]);
-        }
+        var userScores = nextUser.scores;
+
 
         var matchedBuddy = "";
-        var topScore = 100;
+        var buddyImage = "";
         var diffArray = [];
         for(var i = 0; i < friends.length; i++) {
             var currentBuddy = friends[i].scores;
@@ -32,8 +33,6 @@ module.exports = function(app) {
             var currentTotal = diffArray.reduce((a,b) => a + b)
 
             }
-
-            diffArray = [];
             if (currentTotal < topScore) {
                 currentTotal = topScore;
                 matchedBuddy = friends[i];
