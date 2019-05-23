@@ -13,6 +13,10 @@ module.exports = function(app) {
     });
 
 
+
+    //i have a error somewhere in here that is causing me to get he same buddy each time regardless of difference
+    // and only repeating the survey i get back the user i used
+
     app.post("/api/friends", function(req, res) {
 
         var newUser = req.body;
@@ -22,7 +26,7 @@ module.exports = function(app) {
             newUser.scores[i] = parseInt(newUser.scores[i]);
         }
 
-        var matchedBuddy;
+        var matchedBuddy = "";
         
         var topScore = 999999;
         
@@ -56,5 +60,3 @@ module.exports = function(app) {
         res.json(matchedBuddy);
     });
 };
-
-//* A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
