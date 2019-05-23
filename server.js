@@ -24,6 +24,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+//trying to serve static css file
+app.use(express.static(path.join(__dirname + 'app\public\assets\style.css')));
+
 //inclue route files
 require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
